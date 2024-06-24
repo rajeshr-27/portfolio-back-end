@@ -8,6 +8,12 @@ const errorHandler = (err,req,res,next) => {
                 message:err.message,
                 stackTrace : err.stack
             })
+        case 401:
+            res.json({
+                title:"UnAuthenticated",
+                message:err.message,
+                stackTrace : err.stack
+            })
         case 500:
             res.json({
                 title:"Internale server error",

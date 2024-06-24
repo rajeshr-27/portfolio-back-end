@@ -6,7 +6,7 @@ const validateToken = (req,res,next) => {
         token = authHeader.split(' ')[1];
         jwt.verify(token,process.env.ACCESS_TOKEN_SECRET, (err,decoder) => {
             if(err){
-                res.status(400);
+                res.status(401);
                 throw new Error('token unauthorized')
             }
 
@@ -16,7 +16,7 @@ const validateToken = (req,res,next) => {
     }
 
     if(!token){
-        res.status(400);
+        res.status(401);
         throw new Error('Invalid token')
     }
 }
