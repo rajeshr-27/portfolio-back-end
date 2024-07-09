@@ -6,8 +6,7 @@ const userBioSchema = mongoose.Schema({
         required:true
     },
     summary:{
-        type:String,
-        required:true
+        type:String
     },
     portfolio:{
         type:String

@@ -272,7 +272,7 @@ const addBio = asyncHandler(async(req,res)=>{
    // const postData = req.body;
    const postData = JSON.parse(req.body.data);
     const {summary} = postData; 
-    if(!summary || !req.file){
+    if(!req.file){
         res.status(400);
         throw new Error('Please enter required fields');
     }
@@ -297,10 +297,10 @@ const updateBio = asyncHandler(async(req,res)=>{
    // const postData = req.body;
     const postData = JSON.parse(req.body.data);
     const {summary} = postData;
-    if(!summary){
-        res.status(400);
-        throw new Error('Please enter required fields');
-    }
+    // if(!summary){
+    //     res.status(400);
+    //     throw new Error('Please enter required fields');
+    // }
     //bioInfo 
     const bioInfo =  await UserBio.findById(id);
 
