@@ -8,6 +8,13 @@ connectDB();
 const app = express();
 app.use(express.static(path.join(__dirname + "/public")))
 app.use(cors());
+app.use((req,res,next) => {
+    if(req.headers.host.slice(0,4) !== 'www.'){
+        res.redirect(301,'https://www.'+req.headers.host + req.url);
+    }else {
+        next();
+    }
+})
 app.use('/api', express.static('uploads'));
 app.use('/api/user', require('./route/userRoute'));
 app.use('/api/region', require('./route/regionRoute'));
