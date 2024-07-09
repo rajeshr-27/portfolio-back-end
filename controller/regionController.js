@@ -76,6 +76,13 @@ const seedDatas = asyncHandler ( async(req,res) => {
 
     // await Country.insertMany(data);
 
+    // const state_path  = './datas/states.json';
+
+    // const json_data = fs.readFileSync(state_path, 'utf-8')
+    // const data = JSON.parse(json_data);
+
+    // await State.insertMany(data);
+
     //  const city_path  = './datas/cities.json';
 
     // const json_data = fs.readFileSync(city_path, 'utf-8')
