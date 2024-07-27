@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "668cd522c5bf235d54d736d5"
+  },
+  "name": "Y Mohammed Shahid Shariff",
+  "email": "aytsstech@gmail.com",
+  "mobile_number": "07358360736",
+  "password": "cb4c85e49778b5ef2c3b5b9c46e3d05e:dc9dac7a298f8bf97c48313740cb4fc3469a0f26e28ee6571b253365f1d030daca7edbae29510964e7d376ea92fdebc5001c5a2d72b40b192dcd19b481d57574",
+  "gender": "Male",
+  "dob": "1999-06-03",
+  "country": 101,
+  "state": 4035,
+  "city": 131517,
+  "pincode": "600014",
+  "profile_type": "Self Employed",
+  "createdAt": {
+    "$date": "2024-07-09T06:13:54.375Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T06:13:54.375Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cdc28c5bf235d54d74cd6"
+  },
+  "name": "keshore",
+  "email": "keshore.muruga@gmail.com",
+  "mobile_number": "8438466574",
+  "password": "3abcd82e3255771a04078bb1b2f55699:e1c14b264d0d42534a95739b1e3c911fe684dd2cba54394b93d631a4ea5ff7c8be3284df0c8109594523d88f3a0d1ae8361c126a50ac18ce78ee7cdbb7b248e3",
+  "gender": "Male",
+  "dob": "1996-09-08",
+  "country": 101,
+  "state": 4035,
+  "city": 131517,
+  "pincode": "600017",
+  "profile_type": "Salaried",
+  "createdAt": {
+    "$date": "2024-07-09T06:43:52.725Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T06:48:46.147Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668ceb74d85e0bbd2fb224e0"
+  },
+  "name": "Test",
+  "email": "workfreaksworld@gmail.com",
+  "mobile_number": "9080070008",
+  "password": "25867f85d6bb9f4b63f3e56529c4412f:11ab7fd076cb55f3ce3498275985299dcf7f929b3ef091b004352ce29056d277085e4d1bd0512f23355bfaed88c788303ca5ebb53f7000471fa19f9addaff16a",
+  "gender": "Male",
+  "dob": "2000-08-20",
+  "country": 101,
+  "state": 4035,
+  "city": 131517,
+  "pincode": "600002",
+  "profile_type": "Self Employed",
+  "createdAt": {
+    "$date": "2024-07-09T07:49:08.401Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T07:49:08.401Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668d086b9eb5af7cb6ab5d18"
+  },
+  "name": "workfreaks",
+  "email": "workfreaks@gmail.com",
+  "mobile_number": "989898998",
+  "password": "204e59ca71aab8ca8b0699918ad363de:66a3f6aa236fdd92b29ea5ef537f6661c7c4d2edd3da9abcab2963931a4e3a9c50208eb25f496f649dfec1812ab56996be950caa62e13299b4de4c8209e2b86c",
+  "gender": "Male",
+  "dob": "1992-07-09",
+  "country": 101,
+  "state": 4035,
+  "city": 57586,
+  "pincode": "641659",
+  "profile_type": "Student",
+  "createdAt": {
+    "$date": "2024-07-09T09:52:43.207Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T09:52:43.207Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a3d575099b093bc27b94a7"
+  },
+  "name": "Syed",
+  "email": "textsyed@gmail.com",
+  "mobile_number": "979177766",
+  "password": "8fffef8d537a8f4268a8ffe9fedbd937:2ecb29ff7301194c3b56c038ff1d3c55344fce95fbdcdc3e43196fef84b634aa4cac7169ec031612e5978f6e661ee4e89373329af9946be794659186b3264273",
+  "gender": "Male",
+  "dob": "1982-09-27",
+  "country": 101,
+  "state": 4035,
+  "city": 131522,
+  "pincode": "600014",
+  "profile_type": "Self Employed",
+  "createdAt": {
+    "$date": "2024-07-26T16:57:25.314Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-26T16:57:25.314Z"
+  },
+  "__v": 0
+}]

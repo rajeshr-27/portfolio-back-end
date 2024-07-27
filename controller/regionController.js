@@ -31,7 +31,8 @@ const fs = require('fs');
 
 const getCountries = asyncHandler( async (req,res)=>{
 
-    const countries = await Country.find({});
+    const countries = await Country.find({}).sort({name:1});
+    console.log('fetch country')
     res.status(200).json({
         status:1,
         countries,
@@ -45,7 +46,7 @@ const getCountries = asyncHandler( async (req,res)=>{
 
 const getStates = asyncHandler( async (req,res)=>{
     const { countryId } = req.params;
-    const states = await State.find({country_id:countryId})
+    const states = await State.find({country_id:countryId}).sort({name:1});
     res.status(200).json({
         status:1,
         states,
@@ -59,7 +60,7 @@ const getStates = asyncHandler( async (req,res)=>{
 
 const getCities = asyncHandler( async (req,res)=>{
     const { stateId } = req.params;
-    const cities = await City.find({state_id:stateId})
+    const cities = await City.find({state_id:stateId}).sort({name:1});
     res.status(200).json({
         status:1,
         cities,

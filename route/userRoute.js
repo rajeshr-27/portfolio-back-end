@@ -38,6 +38,6 @@ Router.get('/refresh-token/details', validateRefreshToken, (req,res)=> {
 
 Router.post('/add-bio-data',upload.single('photo'), validateToken, addBio);
 Router.put('/update-bio-data/:id', upload.single('photo'), validateToken, updateBio);
-Router.get('/bio-data/:userId', getBio);
+Router.get('/bio-data/:username', getBio);
 
 module.exports = Router;  

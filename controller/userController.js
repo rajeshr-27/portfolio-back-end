@@ -104,8 +104,8 @@ const addUser = asyncHandler(async(req,res) => {
    // const postData = req.body;
     const postData = JSON.parse(req.body.data);
 
-    const {name,email,password,mobile_number, gender, dob, country,state,city,pincode,profile_type} = postData;
-    if(!name || !email || !password || !mobile_number || !gender || !dob || !country || !state  || !pincode || !profile_type){
+    const {name,email,password,username,mobile_number, gender, dob, country,state,city,pincode,profile_type} = postData;
+    if(!name || !email || !password || !username || !mobile_number || !gender || !dob || !country || !state  || !pincode || !profile_type){
         res.status(400);
         throw new Error('Please enter the required fields');
     }
@@ -118,6 +118,13 @@ const addUser = asyncHandler(async(req,res) => {
         res.status(400);
         throw new Error('Email already exist');
     }
+
+      //check user exist or not
+    const userInfoByUsername = await User.findOne({username});
+      if(userInfoByUsername){
+          res.status(400);
+          throw new Error('Username already exist');
+      }
     //passwrord ecrypt
     const pbkdf2 = util.promisify(crypto.pbkdf2);
     const salt = crypto.randomBytes(16).toString('hex');
@@ -145,8 +152,8 @@ const updateUser = asyncHandler(async(req,res) => {
     }
     //const postData = req.body;
     const postData = JSON.parse(req.body.data);
-    const {name,email,mobile_number, gender, dob, country,state,city,pincode,profile_type} = postData;
-    if(!name || !email || !mobile_number || !gender || !dob || !country || !state || !pincode || !profile_type){
+    const {name,email,username,mobile_number, gender, dob, country,state,city,pincode,profile_type} = postData;
+    if(!name || !email || !username ||  !mobile_number || !gender || !dob || !country || !state || !pincode || !profile_type){
         res.status(400);
         throw new Error('Please enter the required fields');
     }
@@ -158,6 +165,13 @@ const updateUser = asyncHandler(async(req,res) => {
     if(userInfoByEmail && userInfoByEmail._id != id){
         res.status(400);
         throw new Error('Email already exist');
+    }
+
+    //check username
+    const userInfoByUsername = await User.findOne({username});
+    if(userInfoByUsername && userInfoByUsername._id != id){
+        res.status(400);
+        throw new Error('Username already exist');
     }
 
     //Update user
@@ -197,6 +211,7 @@ const loginUser = asyncHandler(async(req,res) => {
             _id:userInfo._id,
             name:userInfo.name,
             email:userInfo.email,
+            username:userInfo.username,
             mobile_number:userInfo.mobile_number
         }
         const token = jwt.sign({
@@ -239,7 +254,14 @@ const loginUser = asyncHandler(async(req,res) => {
 //Access public
 
 const getBio = asyncHandler(async(req,res) => {
-    const {userId} = req.params;
+    const {username} = req.params;
+    //get userinfor
+    const userInfo = await User.findOne({username});
+    if(!userInfo){
+        res.status(404);
+        throw new Error('User not exist');
+    }
+    const userId = userInfo._id
     const bioInfo = await UserBio.aggregate([
         {
             $match:{userId: new mongoose.Types.ObjectId(userId)}

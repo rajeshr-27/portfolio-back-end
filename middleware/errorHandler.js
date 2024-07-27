@@ -21,7 +21,12 @@ const errorHandler = (err,req,res,next) => {
                 stackTrace : err.stack
             })
         default : 
-        console.log('no error');
+        if(err){
+            console.log(err)
+        }else {
+            console.log('no error');
+        }
+       
     }
 }
 module.exports = errorHandler;
